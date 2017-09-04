@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件监听</title>
+</head>
+<body>
+  <input type="button" onclick="go()" id="button" value="内联事件"/>
+
+  <script type="text/javascript">
+    function go () {
+      alert("用内联控制事件");
+    }
+
+    var button = document.getElementById("button");
+    button.onclick = function() {
+      alert("用onclick点击控制事件");
+    };
+
+    button.addEventListener('click' ,function () {
+      alert("用事件监听控制事件");
+    });
+    button.addEventListener('click', function () {
+      alert("用事件监听控制事件2");
+    });
+  </script>
+</body>
+</html>

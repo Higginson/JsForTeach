@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>事件绑定</title>
+</head>
+<body>
+
+<input id="button" value="事件绑定" type="button" onclick="go()"/>
+
+<script type="text/javascript">
+
+  function go() {
+    alert("内联式函数调用");
+  }
+
+  var button = document.getElementById("button");
+  button.onclick = function () {
+    alert("onclick点击调用");
+  };
+
+  button.addEventListener('click', function () {
+    alert("事件绑定形式1");
+  });
+
+  button.addEventListener('click', function () {
+    alert("事件绑定形式2");
+  });
+
+
+</script>
+
+</body>
+</html>

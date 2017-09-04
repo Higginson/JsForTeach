@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <title>ISBN</title>
+</head>
+
+<body>
+<div id="data">
+  <input type="button" id="button" value="ajax" onclick="go()"/>
+  <div id="myDiv"></div>
+</div>
+<script type="text/javascript">
+  function go() {
+
+    var requestObj = new XMLHttpRequest();
+    var url = "content.txt";
+    requestObj.open("get", url, true);//  规定请求的类型、URL 以及是否异步处理请求。
+
+    requestObj.send();//将请求发送到服务器。
+    requestObj.onreadystatechange = function () {//每当 readyState 属性改变时，就会调用该函数。
+      if (requestObj.readyState === 4 && requestObj.status === 200) {//存有 XMLHttpRequest 的状态。 readyState状态 4 表示请求已完成，响应已就绪;status 200: "OK"
+        document.getElementById("myDiv").innerHTML = requestObj.responseText;
+        alert("成功");
+      }
+    }
+  }
+</script>
+
+</body>
+
+</html>
